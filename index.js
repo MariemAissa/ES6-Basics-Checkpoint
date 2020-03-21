@@ -4,20 +4,16 @@ const pets = [
     {name: "Jasper", type: "dog", bornOn: 2016}
 ];
 
-const getAge1 = (pet) =>
-{
+const getAge1 = (pet) =>{
     return new Date().getFullYear() - pet.bornOn;
 }
 
-//map function
-const petsWithAge = pets.map(pet => {
-    pet.age = getAge1(pet);
-return pet;
-})
-console.log("petsWithAge", petsWithAge);
+//foreach function
+pets.forEach(pet => pet.age=getAge1(pet))
+console.log("pets With Age", pets);
 
 
-//Filter Function
+//Filter Function return array
 const dogs = pets.filter(pet => pet.type === "dog")
 console.log("dogs", dogs);
 
